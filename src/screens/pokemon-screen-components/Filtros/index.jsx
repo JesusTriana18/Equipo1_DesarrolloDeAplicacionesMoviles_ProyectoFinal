@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { EstadosContext } from '../../../contextos';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Filtros = () => {
   const {
@@ -15,20 +15,18 @@ const Filtros = () => {
   const limpiarFiltro = () => setBusqueda('');
 
   return (
-    <div>
-      <button
-        type='button'
-        onClick={ invertirPokemonConsultados }
+    <View>
+      <TouchableOpacity
+        onPress={ invertirPokemonConsultados }
       >
-        Invertir
-      </button>
-      <button
-        type='button'
-        onClick={ limpiarFiltro }
+        <Text>Invertir</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={ limpiarFiltro }
       >
-        Limpiar filtro
-      </button>
-    </div>
+        <Text>Limpiar filtro</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 

@@ -1,42 +1,45 @@
-import { StyleSheet } from 'react-native';
+import { Image, StyleSheet, View, Text } from 'react-native';
 
 const Tarjeta = ({ pokemon: { nombre, numero, peso, tipos, habilidades, sprite } }) => {
   return (
-    <div>
-      <div>
-        <strong>{ `${ nombre.toUpperCase() } - #${ numero }` }</strong>
-      </div>
-      <div>
-        <p>
-          <strong>Peso: </strong>
+    <View>
+      <View>
+        <Text>{ `${ nombre.toUpperCase() } - #${ numero }` }</Text>
+      </View>
+      <View>
+        <Text>
+          <Text>Peso: </Text>
           { `${ peso / 10 } kg` }
-        </p>
-        <p>
-          <strong>Tipos: </strong>
+        </Text>
+        <Text>
+          <Text>Tipos: </Text>
           { tipos.join(', ') }
-        </p>
-        <p>
-          <strong>Habilidades:</strong>
-        </p>
-        <ul>
+        </Text>
+        <Text>
+          <Text>Habilidades:</Text>
+        </Text>
+        <View>
           {
             habilidades.map((h, i) => (
-              <li key={ i }>
+              <Text key={ i }>
                 { h }
-              </li>
+              </Text>
             ))
           }
-        </ul>
-      </div>
-      <div>
-        <img src={ sprite } alt={ `Sprite ${ nombre }` }/>
-      </div>
-    </div>
+        </View>
+      </View>
+      <View>
+        <Image
+          style={ styles.sprite }
+          source={ { uri: sprite } }
+        />
+      </View>
+    </View>
   );
 };
 
 export default Tarjeta;
 
 const styles = StyleSheet.create({
-  
+  sprite: { height: 75, width: 75 }
 });

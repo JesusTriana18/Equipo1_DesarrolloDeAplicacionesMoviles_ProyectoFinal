@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { EstadosContext } from '../../../contextos';
-import { StyleSheet } from 'react-native';
-import iconoBoton from './search.png';
+import { Image, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 
 const BarraDeBusqueda = () => {
   const [ entrada, setEntrada ] = useState('');
@@ -9,8 +8,8 @@ const BarraDeBusqueda = () => {
     estadoBusqueda : [ , setBusqueda ]
   } = useContext(EstadosContext);
 
-  const actualizarEntrada = e => {
-    setEntrada(e.target.value);
+  const actualizarEntrada = v => {
+    setEntrada(v);
   };
 
   const establecerBusqueda = () => {
@@ -18,21 +17,21 @@ const BarraDeBusqueda = () => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-          type='text'
+    <View>
+      <View>
+        <TextInput
           placeholder='Nombre de Pokémon'
-          onChange={ actualizarEntrada }
+          onChangeText={ actualizarEntrada }
         />
-        <button
-          type='button'
-          onClick={ establecerBusqueda }
+        <TouchableOpacity
+          onPress={ establecerBusqueda }
         >
-          <img src={ iconoBoton } alt='Buscar'/>
-        </button>
-      </div>
-    </div>
+          <Image
+            source={ require('./search.png') }
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 

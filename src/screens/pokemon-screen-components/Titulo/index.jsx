@@ -1,6 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-const Titulo = () => <div>Pokédex</div>
+const Titulo = ({ texto }) => (
+  <View>
+    <Text>{ texto }</Text>
+  </View>
+);
 
 export default Titulo;
 

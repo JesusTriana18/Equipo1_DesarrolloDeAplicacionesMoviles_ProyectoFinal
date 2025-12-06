@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import Switch from 'switch-expr-vanilla';
 import { EstadosContext } from '../../../contextos';
 import Tarjeta from './Tarjeta';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const resumirPokemon = pokemon => ({
   nombre: pokemon.name,
@@ -61,14 +61,14 @@ const Tarjetas = () => {
   }, [ busqueda ]);
 
   return (
-    <div>
+    <View>
       {
         Switch(pokemonConsultados)
-        .Case(ps => ps === undefined, <h1>Cargando Pokémon...</h1>)
-        .Case(ps => ps.length === 0, <h1>No se encontró el Pokémon</h1>)
+        .Case(ps => ps === undefined, <Text>Cargando Pokémon...</Text>)
+        .Case(ps => ps.length === 0, <Text>No se encontró el Pokémon</Text>)
         .Default(ps => ps.map(p => <Tarjeta key={ p.numero } pokemon={ p }/>))
       }
-    </div>
+    </View>
   );
 };
 
