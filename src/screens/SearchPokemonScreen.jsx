@@ -1,11 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Button, StyleSheet, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const SearchPokemonScreen = () => {
+const SearchPokemonScreen = ({ navigation }) => {
   return (
     <SafeAreaView>
       <Text>SearchPokemonScreen</Text>
+      <Button
+        title='Ir'
+        onPress={ () => navigation.navigate('Details Pokemon') }
+      />
     </SafeAreaView>
   )
 }

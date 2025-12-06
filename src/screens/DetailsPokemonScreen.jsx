@@ -1,10 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const DetailsPokemonScreen = () => {
+const DetailsPokemonScreen = ({ navigation, route }) => {
   return (
     <SafeAreaView>
+      <Button
+        title='Atrás'
+        onPress={ () => navigation.goBack() }
+      />
       <Text>DetailsPokemonScreen</Text>
     </SafeAreaView>
   )

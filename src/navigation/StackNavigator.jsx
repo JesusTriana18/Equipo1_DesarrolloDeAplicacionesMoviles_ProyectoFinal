@@ -9,7 +9,7 @@ const StackNavigator = () => {
     return (
         <Stack.Navigator
             screenOptions={{
-                headerShown: true,
+                headerShown: false,
             }}
         >
             <Stack.Screen name="Search Pokemon" component={SearchPokemonScreen} />

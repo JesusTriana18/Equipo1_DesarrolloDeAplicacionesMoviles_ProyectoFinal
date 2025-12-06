@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, FontAwesome } from '@expo/vector-icons'; // Importamos los iconos
 
 import AboutScreen from '../screens/AboutScreen';
-import SearchPokemonScreen from '../screens/SearchPokemonScreen';
+import StackNavigator from './StackNavigator';
 import HomeScreen from '../screens/HomeScreen';
 
 
@@ -36,7 +36,7 @@ const BottomTabsNavigator = () => {
 
             <Tab.Screen 
                 name='Search' 
-                component={SearchPokemonScreen} 
+                component={StackNavigator} 
                 options={{
                     title: 'Búsqueda',
                     tabBarIcon: ({ color, size }) => (
