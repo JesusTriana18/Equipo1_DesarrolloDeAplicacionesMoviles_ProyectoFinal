@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Contextos
@@ -10,24 +10,26 @@ import BarraDeBusqueda from './pokemon-screen-components/BarraDeBusqueda';
 import Filtros from './pokemon-screen-components/Filtros';
 import Tarjetas from './pokemon-screen-components/Tarjetas';
 import Titulo from './pokemon-screen-components/Titulo';
+import Separator from '../components/general/Separator';
 
 const SearchPokemonScreen = ({ navigation }) => {
-  const [ pokemonConsultados, setPokemonConsultados ] = useState(undefined);
-  const [ busqueda, setBusqueda ] = useState('');
+  const [pokemonConsultados, setPokemonConsultados] = useState(undefined);
+  const [busqueda, setBusqueda] = useState('');
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <Titulo texto='Pokédex'/>
+      <Text style={styles.title}>Pokedex</Text>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Separator marginVertical={10} />
         <EstadosContext.Provider
-          value={ {
-            estadoPokemonConsultados : [ pokemonConsultados, setPokemonConsultados ],
-            estadoBusqueda : [ busqueda, setBusqueda ]
-          } }
+          value={{
+            estadoPokemonConsultados: [pokemonConsultados, setPokemonConsultados],
+            estadoBusqueda: [busqueda, setBusqueda]
+          }}
         >
-          <BarraDeBusqueda/>
-          <Filtros/>
-          <Tarjetas/>
+          <BarraDeBusqueda />
+          <Filtros />
+          <Tarjetas />
         </EstadosContext.Provider>
       </ScrollView>
     </SafeAreaView>
@@ -36,4 +38,16 @@ const SearchPokemonScreen = ({ navigation }) => {
 
 export default SearchPokemonScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 15,
+  },
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Separator from '../components/Separator';
+import Separator from '../components/general/Separator';
 
 const HomeScreen = () => {
   return (
@@ -12,13 +12,13 @@ const HomeScreen = () => {
         source={require('../assets/logo.png')}
         style={styles.image}
       />
-        <Separator marginVertical={10} />
+      <Separator marginVertical={10} />
       <Text style={styles.title}>Desarrollo de Aplicaciones Móviles</Text>
       <Separator marginVertical={5} />
       <Text style={styles.title}>Equipo #1</Text>
       <Separator marginVertical={10} />
       <Text style={styles.text}>- Contreras Basurto Alexis Alberto - C20212391</Text>
-       <Separator marginVertical={5} />
+      <Separator marginVertical={5} />
       <Text style={styles.text}>- Triana Corvera Jesus Antonio - C20212681</Text>
     </SafeAreaView>
   )

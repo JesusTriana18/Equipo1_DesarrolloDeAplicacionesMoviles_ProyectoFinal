@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const Titulo = ({ texto }) => (
   <View>
-    <Text>{ texto }</Text>
+    <Text style={styles.title}>{ texto }</Text>
   </View>
 );
 

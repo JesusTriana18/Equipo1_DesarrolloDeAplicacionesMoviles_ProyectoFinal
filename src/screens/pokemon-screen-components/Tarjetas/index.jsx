@@ -61,7 +61,7 @@ const Tarjetas = () => {
   }, [ busqueda ]);
 
   return (
-    <View>
+    <View style={styles.container}>
       {
         Switch(pokemonConsultados)
         .Case(ps => ps === undefined, <Text>Cargando Pokémon...</Text>)
@@ -75,5 +75,9 @@ const Tarjetas = () => {
 export default Tarjetas;
 
 const styles = StyleSheet.create({
-  
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
 });

@@ -1,11 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Separator from '../components/Separator';
-import Link from '../components/Link';
+import Link from '../components/general/Link';
+import Separator from '../components/general/Separator';
 
 const AboutScreen = () => {
-
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Pokémon API</Text>
