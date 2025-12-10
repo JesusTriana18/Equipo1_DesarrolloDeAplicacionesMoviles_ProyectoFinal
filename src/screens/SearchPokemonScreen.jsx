@@ -9,7 +9,6 @@ import { EstadosContext } from '../contextos';
 import BarraDeBusqueda from './pokemon-screen-components/BarraDeBusqueda';
 import Filtros from './pokemon-screen-components/Filtros';
 import Tarjetas from './pokemon-screen-components/Tarjetas';
-import Titulo from './pokemon-screen-components/Titulo';
 import Separator from '../components/general/Separator';
 
 const SearchPokemonScreen = ({ navigation }) => {
@@ -28,9 +27,12 @@ const SearchPokemonScreen = ({ navigation }) => {
           }}
         >
           <BarraDeBusqueda />
+          <Separator marginVertical={6} />
           <Filtros />
+             <Separator marginVertical={12} />
           <Tarjetas />
         </EstadosContext.Provider>
+        <Separator marginVertical={20}/>
       </ScrollView>
     </SafeAreaView>
   )
